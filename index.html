@@ -3870,7 +3870,7 @@
                                         ></i>
                                       </span>
                                       <span class="elementor-icon-list-text"
-                                        >0439929210</span
+                                        ><a href="tel:+61439929210">0439929210</a></span
                                       >
                                     </li>
                                     <li class="elementor-icon-list-item">
@@ -3881,7 +3881,7 @@
                                         ></i>
                                       </span>
                                       <span class="elementor-icon-list-text"
-                                        >info@luminous-nails.com.au</span
+                                        ><a href="mailto:info@luminous-nails.com.au?subject=Booking request">info@luminous-nails.com.au</a></span
                                       >
                                     </li>
                                     <li class="elementor-icon-list-item">
@@ -3892,8 +3892,7 @@
                                         ></i>
                                       </span>
                                       <span class="elementor-icon-list-text"
-                                        >85 Palmview Forest Drive, Palmview,
-                                        QLD, 4553
+                                        ><a class="map-link" data-address="85 Palmview Forest Drive, Palmview, QLD, 4553" href="#">85 Palmview Forest Drive, Palmview, QLD, 4553</a>
                                       </span>
                                     </li>
                                     <li class="elementor-icon-list-item">
@@ -3904,7 +3903,7 @@
                                         ></i>
                                       </span>
                                       <span class="elementor-icon-list-text">
-                                        Turbot Street, Spring Hill, QLD, 4000
+                                        <a class="map-link" data-address="Turbot Street, Spring Hill, QLD, 4000" href="#">Turbot Street, Spring Hill, QLD, 4000</a>
                                       </span>
                                     </li>
                                   </ul>
@@ -9351,7 +9350,7 @@
                             id="menu-item-826"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-826"
                           >
-                            <a href="mailto:info@luminous-nails.com.au" class="menu-link"
+                            <a href="mailto:info@luminous-nails.com.au?subject=Booking request" class="menu-link"
                               >info@luminous-nails.com.au</a
                             >
                           </li>
@@ -9359,9 +9358,7 @@
                             id="menu-item-827"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-827"
                           >
-                            <a href="index.html#" class="menu-link"
-                              >85 Palmview Forest Drive</a
-                            >
+                          <a class="map-link" data-address="85 Palmview Forest Drive, Palmview, QLD, 4553" href="#">85 Palmview Forest Drive</a>
                           </li>
                         </ul>
                       </nav>
@@ -9435,8 +9432,7 @@
                 >
                   <div class="ast-footer-copyright">
                     <p>
-                      Copyright &copy; 2024 Luminous Nails | Powered by Kimia
-                      Web
+                      Copyright &copy; 2024 Luminous Nails
                     </p>
                   </div>
                 </div>
@@ -9502,6 +9498,23 @@
     <!-- #page -->
 
     <div id="fb-root"></div>
+    <script>
+      document.querySelectorAll('.map-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var address = link.getAttribute('data-address');
+          var url = '';
+          
+          if (navigator.userAgent.match(/iPhone|iPad|iPod/)) {
+            url = 'https://maps.apple.com/?q=' + encodeURIComponent(address);
+          } else {
+            url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address);
+          }
+          
+          window.open(url, '_blank');
+        });
+      });
+    </script>
     <script>
       (function (d, s, id) {
         var js,
